@@ -20,14 +20,9 @@ class MainActivity : AppCompatActivity(), ScaleGestureDetector.OnScaleGestureLis
 
         imageView = findViewById(R.id.image_zoom)
         scaleGestureDetector = ScaleGestureDetector(this, this)
-
     }
 
     override fun onScale(detector: ScaleGestureDetector): Boolean {
-        Log.d("suzan" , "onScale")
-
-        Log.d("suzan" , detector.toString())
-
         detector?.let {
             scaleFactor *= it.scaleFactor
             scaleFactor = Math.max(0.1f, Math.min(scaleFactor, 10.0f))
@@ -38,16 +33,10 @@ class MainActivity : AppCompatActivity(), ScaleGestureDetector.OnScaleGestureLis
     }
 
     override fun onScaleBegin(p0: ScaleGestureDetector): Boolean {
-
-        Log.d("suzan" , "onScaleBegin")
-
         return true
     }
 
     override fun onScaleEnd(p0: ScaleGestureDetector) {
-        Log.d("suzan" , "onScaleEnd")
-
-
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
